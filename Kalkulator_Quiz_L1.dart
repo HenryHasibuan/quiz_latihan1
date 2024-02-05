@@ -38,8 +38,15 @@ void main() {
         print('Penghasilan anda dibawah nishab sehingga tidak wajib membayar zakat, tetapi bisa berinfak');
       }
 
-
     case 4:
+      print('');
+      stdout.write('Masukkan panjang dari kotak yang hendak dihitung luasnya : ');
+      int? panjang = int.parse(stdin.readLineSync()!);
+      stdout.write('Masukkan lebar dari kotak yang hendak dihitung luasnya : ');
+      int? lebar = int.parse(stdin.readLineSync()!);
+      int luasKotak = panjang * lebar;
+      print ('Luas Kotak dengan panjang $panjang dan lebar $lebar adalah : $luasKotak');
+
     default:
       print ('Salah Memasukkan Input (hanya angka 1,2,3,4)');
   }
