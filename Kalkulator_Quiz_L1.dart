@@ -16,24 +16,29 @@ void main() {
     case 1:
       List<int> nilai = inputAngka();
       int hasil = tambah(nilai);
-      print ('\nHasil Penjumlahan $nilai adalah : $hasil');
+      print('\nHasil Penjumlahan $nilai adalah : $hasil');
 
     case 2:
       List<int> nilai = inputAngka();
       int hasil = sifir(nilai);
-      print ('\nHasil Perkalian $nilai adalah : $hasil');
+      print('\nHasil Perkalian $nilai adalah : $hasil');
 
     case 3:
-      stdout.write('Masukkan angka : ');
-      String? strNum = stdin.readLineSync();
-      strNum = strNum!.replaceAll(new RegExp(r"\D"), "");
-      print(strNum.isEmpty) ;
-        if (strNum.isEmpty) {
-          strNum = "0";
-        }
-      int num = int.parse(strNum);
-      //int? angka = int.parse(stdin.readLineSync()!);
-      print(strNum.isEmpty) ;
+      int nishab = 8089166;
+      print('');
+      print('Menghitung zakat dari penghasilan per bulan (nishab 85gr emas)');
+      stdout.write('Masukkan jumlah penghasilan per bulan anda saat ini : ');
+      int? penghasilan = int.parse(stdin.readLineSync()!);
+      if (penghasilan >= nishab) {
+        double besarZakat = 0.0025 * penghasilan;
+        print('');
+        print('Penghasilan anda sebesar Rp $penghasilan telah melebihi nishab sehingga wajib bayar zakat');
+        print('Besar zakat per bulan yang wajib dibayarkan : Rp $besarZakat');
+      } else {
+        print('Penghasilan anda dibawah nishab sehingga tidak wajib membayar zakat, tetapi bisa berinfak');
+      }
+
+
     case 4:
     default:
       print ('Salah Memasukkan Input (hanya angka 1,2,3,4)');
